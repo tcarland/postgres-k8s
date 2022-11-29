@@ -1,7 +1,7 @@
 Postgres on Kubernetes Deployment
 ===================================
 
-Kustomize manifests for deploying postgres to k8s.
+Kustomize manifests for a simple example of deploying postgres to k8s.
 
 ## Configuration
 
