@@ -3,7 +3,7 @@ name: 'Kustomize Build Action'
 on:
   push:
     tags: [ 'v*' ]
-    branches: [ 'develop', 'v0.2.1']
+    branches: [ 'develop' ]
   pull_request:
     branches: [ 'master', 'main' ]
 
