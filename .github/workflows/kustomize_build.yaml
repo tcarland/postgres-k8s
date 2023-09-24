@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Build
-        uses: tcarland/kustomize-build-action@v0.1.0
+        uses: tcarland/kustomize-build-action@v0.1.1
         with:
           kustomize_dir: './manifests'
