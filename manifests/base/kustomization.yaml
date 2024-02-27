@@ -20,7 +20,7 @@ secretGenerator:
   envs: 
   - secrets.env
 
-commonLabels:
-  kustomize.component: postgres
-
-namespace: postgres
+labels:
+- includeSelectors: true
+  pairs:
+    kustomize.component: postgres
