@@ -19,8 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup
-        run: echo "POSTGRES_DB=${POSTGRES_DB}" > ./manifests/base/secret.env && \
+      - name: Setup base
+        shell: bash
+        run: |
+          echo "POSTGRES_DB=${POSTGRES_DB}" > ./manifests/base/secret.env && \
           echo "POSTGRES_USER=${POSTGRES_USER} >> ./manifests/base/secret.env && \
           echo "POSTGRES_PASSWORD=${POSTGRES_PASSWORD} >> ./manifests/base/secret.env
       
