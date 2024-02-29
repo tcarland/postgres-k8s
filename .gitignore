@@ -1,3 +1,5 @@
+*.sw*
 env/*.env
+**/secrets.env
 **/overlays/*
 !**/overlays/example

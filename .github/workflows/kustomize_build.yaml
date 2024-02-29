@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: [ 'master', 'main' ]
 
+env:
+  POSTGRES_DB: mydb
+  POSTGRES_USER: pguser
+  POSTGRES_PASSWORD: pgpass
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,6 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup base
+        shell: bash
+        run: |
+          echo "POSTGRES_DB=${POSTGRES_DB}" > ./manifests/base/secrets.env && \
+          echo "POSTGRES_USER=${POSTGRES_USER} >> ./manifests/base/secrets.env && \
+          echo "POSTGRES_PASSWORD=${POSTGRES_PASSWORD} >> ./manifests/base/secrets.env
+      
       - name: Build
         uses: tcarland/kustomize-build-action@v1
         with:
