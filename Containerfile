@@ -1,4 +1,4 @@
-FROM postgres:15.4
+FROM postgres:15.6
 
 ENV POSTGRES_DB mydb
 
