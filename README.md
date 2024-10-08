@@ -1,7 +1,7 @@
 Postgres on Kubernetes Deployment
 ===================================
 
-Kustomize manifests for a simple example of deploying postgres to k8s.
+*Kustomize* manifests for a deployment of postgres to k8s.
 
 ## Configuration
 
@@ -10,8 +10,10 @@ kubernetes *Secret*. The *env.template* file demonstrates
 setting three vars, *POSTGRES_DB, POSTGRES_USER*, and 
 *POSTGRES_PASSWORD*. Copy the template and create a custom
 env file to set the vars.
-```
+```sh
 cp env/env.template env/mydeployment.env
+source env/mydeployment.env
+cat manifests/base/secrets.env.template | envsubst > manifests/base/secrets.env
 ```
 
 ## Postgres Provisioning
