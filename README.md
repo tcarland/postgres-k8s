@@ -69,12 +69,12 @@ ALTER SCHEMA test OWNER TO test_admin;
 ## Deployment
 
 To deploy run kustomize on the manifests or overlay as appropriate.
-```
+```bash
 source env/mydeployment.env
 kustomize build manifests/ | kubectl apply -f -
 ```
 
 Connecting locally to Postgres
-```
+```bash
 kubectl exec -it postgres-xxxx -- psql -h localhost -U appuser --password -p 5432 mydb
 ```
